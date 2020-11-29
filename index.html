@@ -10,7 +10,7 @@
     <style>
         td{
           border:2px solid black
-
+          
         }
 
     </style>
@@ -26,82 +26,139 @@
           <td>futás</td>
           <td>680</td>
           <td><input id="futas" type="text" value="0"></td>
-          <td id="k"></td>
+          <td id="kfutas"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>focizás</td>
+          <td>550</td>
+          <td><input id="foci" type="text" value="0"></td>
+          <td id="kfoci"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>bringázás</td>
+          <td>480</td>
+          <td><input id="bringa" type="text" value="0"></td>
+          <td id="kbringa"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>hegymászás</td>
+          <td>420</td>
+          <td><input id="hegy" type="text" value="0"></td>
+          <td id="khegy"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>lovaglás</td>
+          <td>370</td>
+          <td><input id="lo" type="text" value="0"></td>
+          <td id="klo"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>túrázás</td>
+          <td>360</td>
+          <td><input id="tura" type="text" value="0"></td>
+          <td id="ktura"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>kajakozás</td>
+          <td>340</td>
+          <td><input id="kajak" type="text" value="0"></td>
+          <td id="kkajak"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>súlyzós edzés</td>
+          <td>320</td>
+          <td><input id="suly" type="text" value="0"></td>
+          <td id="ksuly"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>pingpongozás</td>
+          <td>270</td>
+          <td><input id="pong" type="text" value="0"></td>
+          <td id="kpong"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>kutya sétáltatás</td>
+          <td>200</td>
+          <td><input id="seta" type="text" value="0"></td>
+          <td id="kseta"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td colspan="2">öszesen</td>
+          <td id="ösz"></td>
+          <td id="kösz"></td>
           
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td colspan="3">Napi enrgia szükséglet(2000 kcal) arányában</td>
+          <td id="e"></td>
           
         </tr>
     </table>
 
-    <button onclick="myFunction()">Try it</button>
+    <button onclick="myFunction()">kiszámítás</button>
 
     <script>
 
       function myFunction() {
-        var x = document.getElementById("futas").form.id;
-        document.getElementById("k").innerHTML = x;
+
+        //futás
+        var futas = document.getElementById("futas").value;
+        var kfutas = futas/60*680
+        document.getElementById("kfutas").innerHTML = kfutas;
+
+        //focizás
+        var foci = document.getElementById("foci").value;
+        var kfoci = foci/60*550
+        document.getElementById("kfoci").innerHTML = kfoci;
+
+        //bringázás
+        var bringa = document.getElementById("bringa").value;
+        var kbringa = bringa/60*480
+        document.getElementById("kbringa").innerHTML = kbringa;
+
+        //hegymászás
+        var hegy = document.getElementById("hegy").value;
+        var khegy = hegy/60*420
+        document.getElementById("khegy").innerHTML = khegy;
+
+        //lovaglás
+        var lo = document.getElementById("lo").value;
+        var klo = lo/60*370
+        document.getElementById("klo").innerHTML = klo;
+
+        //túrázás
+        var tura = document.getElementById("tura").value;
+        var ktura = tura/60*360
+        document.getElementById("ktura").innerHTML = ktura;
+
+        //kajakozás
+        var kajak = document.getElementById("kajak").value;
+        var kkajak = kajak/60*340
+        document.getElementById("kkajak").innerHTML = kkajak;
+
+        //súlyzós edzés
+        var suly = document.getElementById("suly").value;
+        var ksuly = suly/60*320
+        document.getElementById("ksuly").innerHTML = ksuly;
+
+        //pingpongozás
+        var pong = document.getElementById("pong").value;
+        var kpong = pong/60*270
+        document.getElementById("kpong").innerHTML = kpong;
+
+        //kutya sétáltatás
+        var seta = document.getElementById("seta").value;
+        var kseta = seta/60*200
+        document.getElementById("kseta").innerHTML = kseta;
+
+        var oszes = Number(futas) + Number(foci) + Number(bringa) + Number(hegy) + Number(lo) + Number(tura) + Number(kajak) + Number(suly) + Number(pong) + Number(seta)
+        document.getElementById("ösz").innerHTML = oszes;
+        var koszes = kfutas + kfoci + kbringa + khegy + klo + ktura + kkajak + ksuly + kpong + kseta
+        document.getElementById("kösz").innerHTML = koszes;
+
+        var e = koszes/2000
+        document.getElementById("e").innerHTML = e;
+
       }
 
 
